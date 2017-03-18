@@ -1,8 +1,0 @@
-<?php
-
-/**
- * @file
- * Code for the UBM EMEA Event import feature.
- */
-
-include_once 'ubm_emea_event_import.features.inc';
