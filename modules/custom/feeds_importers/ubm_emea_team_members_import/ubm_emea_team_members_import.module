@@ -1,0 +1,253 @@
+<?php
+
+/**
+ * @file
+ * Code for the UBM EMEA Team members import feature.
+ */
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function ubm_emea_team_members_import_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "feeds" && $api == "feeds_importer_default") {
+    return array("version" => "1");
+  }
+  if ($module == "feeds_tamper" && $api == "feeds_tamper_default") {
+    return array("version" => "2");
+  }
+}
+
+/**
+ * Implements hook_feeds_importer_default().
+ */
+function ubm_emea_team_members_import_feeds_importer_default() {
+  $export = array();
+
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'team_members';
+  $feeds_importer->config = array(
+    'name' => 'Team members',
+    'description' => 'Import of team members by csv file',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsFileFetcher',
+      'config' => array(
+        'allowed_extensions' => 'csv',
+        'direct' => 0,
+        'directory' => 'public://feeds',
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsCSVParser',
+      'config' => array(
+        'delimiter' => ',',
+        'no_headers' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsNodeProcessor',
+      'config' => array(
+        'expire' => '-1',
+        'author' => 0,
+        'authorize' => 1,
+        'mappings' => array(
+          0 => array(
+            'source' => 'id',
+            'target' => 'guid',
+            'unique' => 1,
+          ),
+          1 => array(
+            'source' => 'first name',
+            'target' => 'field_team_member_first_name',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'last name',
+            'target' => 'field_team_member_last_name',
+            'unique' => FALSE,
+          ),
+          3 => array(
+            'source' => 'ubm team',
+            'target' => 'field_team_member_ubm_team',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          4 => array(
+            'source' => 'email',
+            'target' => 'field_team_member_email',
+            'unique' => FALSE,
+          ),
+          5 => array(
+            'source' => 'photo',
+            'target' => 'field_team_member_photo:uri',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'phone',
+            'target' => 'field_team_member_phone_number',
+            'unique' => FALSE,
+          ),
+          7 => array(
+            'source' => 'linkedin',
+            'target' => 'field_team_member_linkedin:url',
+            'unique' => FALSE,
+          ),
+          8 => array(
+            'source' => 'google+',
+            'target' => 'field_team_member_google_plus:url',
+            'unique' => FALSE,
+          ),
+          9 => array(
+            'source' => 'twitter',
+            'target' => 'field_team_member_twitter:url',
+            'unique' => FALSE,
+          ),
+        ),
+        'update_existing' => '2',
+        'update_non_existent' => 'skip',
+        'input_format' => 'plain_text',
+        'skip_hash_check' => 0,
+        'bundle' => 'team_member',
+        'language' => 'en',
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+
+  $translatable_fields = array(
+    array(
+      'source' => 'job title',
+      'target' => 'field_team_member_job_title',
+      'unique' => FALSE,
+    ),
+  );
+
+  $appended_fields = ubm_emea_utils_feeds_generate_i18n_fields($translatable_fields);
+  $feeds_importer->config['processor']['config']['mappings']
+    = array_merge($feeds_importer->config['processor']['config']['mappings'], $appended_fields);
+
+  $export['team_members'] = $feeds_importer;
+
+  return $export;
+}
+
+/**
+ * Implements hook_feeds_tamper_default().
+ */
+function ubm_emea_team_members_import_feeds_tamper_default() {
+  $export = array();
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'team_members-id-required';
+  $feeds_tamper->importer = 'team_members';
+  $feeds_tamper->source = 'id';
+  $feeds_tamper->plugin_id = 'required';
+  $feeds_tamper->settings = array(
+    'invert' => 0,
+    'log' => 1,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Required field';
+  $export['team_members-id-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'team_members-first_name-required';
+  $feeds_tamper->importer = 'team_members';
+  $feeds_tamper->source = 'first name';
+  $feeds_tamper->plugin_id = 'required';
+  $feeds_tamper->settings = array(
+    'invert' => 0,
+    'log' => 1,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Required field';
+  $export['team_members-first_name-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'team_members-job_title-required';
+  $feeds_tamper->importer = 'team_members';
+  $feeds_tamper->source = 'job title';
+  $feeds_tamper->plugin_id = 'required';
+  $feeds_tamper->settings = array(
+    'invert' => 0,
+    'log' => 1,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Required field';
+  $export['team_members-job_title-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'team_members-last_name-required';
+  $feeds_tamper->importer = 'team_members';
+  $feeds_tamper->source = 'last name';
+  $feeds_tamper->plugin_id = 'required';
+  $feeds_tamper->settings = array(
+    'invert' => 0,
+    'log' => 1,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Required field';
+  $export['team_members-last_name-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'team_members-photo-sanitize_url';
+  $feeds_tamper->importer = 'team_members';
+  $feeds_tamper->source = 'photo';
+  $feeds_tamper->plugin_id = 'sanitize_url';
+  $feeds_tamper->settings = '';
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Sanitize url';
+  $export['team_members-photo-sanitize_url'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'team_members-ubm_team-required';
+  $feeds_tamper->importer = 'team_members';
+  $feeds_tamper->source = 'ubm team';
+  $feeds_tamper->plugin_id = 'required';
+  $feeds_tamper->settings = array(
+    'invert' => 0,
+    'log' => 1,
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Required field';
+  $export['team_members-ubm_team-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'team_members-ubm_team-explode';
+  $feeds_tamper->importer = 'team_members';
+  $feeds_tamper->source = 'ubm team';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Explode';
+  $export['team_members-ubm_team-explode'] = $feeds_tamper;
+
+  return $export;
+}
