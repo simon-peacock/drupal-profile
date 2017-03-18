@@ -35,65 +35,25 @@ projects[strongarm][type] = "module"
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = 2.0
 
-
 ; Features =====================================================================
 projects[features][type] = "module"
 projects[features][subdir] = "contrib"
 projects[features][version] = 2.10
-
 
 ; Date Ical =====================================================================
 projects[date_ical][type] = "module"
 projects[date_ical][subdir] = "contrib"
 projects[date_ical][version] = 3.9
 
-
-; file_entity =====================================================================
-projects[file_entity][type] = "module"
-projects[file_entity][subdir] = "contrib"
-projects[file_entity][version] = 2.0-beta3
-
-; i18n =====================================================================
-; @See https://www.drupal.org/node/2082573
-projects[i18n][type] = "module"
-projects[i18n][subdir] = "contrib-patched"
-projects[i18n][version] = "1.15"
-projects[i18n][patch][] = "https://www.drupal.org/files/issues/i18n_string-undefined-method-2082573-13.patch"
-
-; title =====================================================================
-projects[title][type] = "module"
-projects[title][subdir] = "contrib"
-projects[title][version] = 1.0-alpha9
-
-
 ; Views ========================================================================
 projects[views][type] = "module"
 projects[views][subdir] = "contrib"
 projects[views][version] = 3.15
-
-; Job Scheduler ========================================================================
-projects[job_scheduler][type] = "module"
-projects[job_scheduler][subdir] = "contrib"
-projects[job_scheduler][version] = 2.0-alpha3
 
 ; Libraries ========================================================================
 projects[libraries][type] = "module"
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = 2.3
 
-; Entity related ===============================================================
-projects[entity][type] = "module"
-projects[entity][subdir] = "contrib"
-projects[entity][version] = 1.8
-projects[entity][patch][] = "https://www.drupal.org/files/issues/op_update_should_be_create-2807275-2.patch"
 
-; Entity Translation ========================================================================
-projects[entity_translation][type] = "module"
-projects[entity_translation][subdir] = "contrib"
-projects[entity_translation][version] = 1.0-beta6
-
-; Variable ===============================================================
-projects[variable][type] = "module"
-projects[variable][subdir] = "contrib"
-projects[variable][version] = 2.5
 
