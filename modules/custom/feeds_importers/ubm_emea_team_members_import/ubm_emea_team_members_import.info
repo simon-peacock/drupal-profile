@@ -1,0 +1,11 @@
+name = UBM EMEA Team members import
+description = Import of team members content and UBM teams taxonomy
+core = 7.x
+package = UBM EMEA Feeds
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = feeds
+dependencies[] = feeds_et
+dependencies[] = feeds_tamper
+dependencies[] = taxonomy
+dependencies[] = ubm_feeds_plugins
