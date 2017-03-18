@@ -1,0 +1,36 @@
+name = EMEA_Events
+distribution_name = EMEA_Events
+description = Enzo installer for UBM EMEA specific event sites
+core = 7.x
+exclusive = 1
+base = base_events_ubm
+version = 7.x-1.12
+
+; Enable core modules
+
+dependencies[] = dblog
+
+; Enable contrib modules
+
+dependencies[] = ctools
+dependencies[] = feeds
+dependencies[] = feeds_tamper
+dependencies[] = conditional_fields
+dependencies[] = countries
+dependencies[] = ctools
+dependencies[] = date
+dependencies[] = date_ical
+dependencies[] = event_content_type_fields
+dependencies[] = features
+dependencies[] = geofield
+dependencies[] = geofield_map
+dependencies[] = image
+dependencies[] = list
+dependencies[] = media
+dependencies[] = options
+dependencies[] = strongarm
+dependencies[] = text
+dependencies[] = tzfield
+
+dependencies[] = ubm_emea_event
+dependencies[] = ubm_feeds_plugins
