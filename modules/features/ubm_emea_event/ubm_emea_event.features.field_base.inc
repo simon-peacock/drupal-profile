@@ -301,27 +301,5 @@ function ubm_emea_event_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_time_zone'.
-  $field_bases['field_time_zone'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_time_zone',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'tzfield',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'exclude' => array(),
-    ),
-    'translatable' => 0,
-    'type' => 'tzfield',
-  );
-
   return $field_bases;
 }
