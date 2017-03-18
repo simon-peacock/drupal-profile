@@ -31,5 +31,3 @@ features[variable][] = node_preview_event
 features[variable][] = node_submitted_event
 features[variable][] = publishcontent_event
 features[variable][] = xmlsitemap_settings_node_event
-features_exclude[dependencies][conditional_fields] = conditional_fields
-features_exclude[dependencies][event_content_type_fields] = event_content_type_fields
