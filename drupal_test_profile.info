@@ -24,7 +24,6 @@ dependencies[] = options
 dependencies[] = strongarm
 dependencies[] = text
 
-dependencies[] = event_content_type_fields
 dependencies[] = ubm_emea_event
 dependencies[] = ubm_feeds_plugins
 dependencies[] = ubm_emea_event_import
