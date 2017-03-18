@@ -1,9 +1,8 @@
-name = EMEA_Events
+name = drupal test profile
 distribution_name = EMEA_Events
 description = Enzo installer for UBM EMEA specific event sites
 core = 7.x
 exclusive = 1
-base = base_events_ubm
 version = 7.x-1.12
 
 ; Enable core modules
