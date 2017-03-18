@@ -1,12 +1,11 @@
 name = drupal test profile
-distribution_name = EMEA_Events
-description = Enzo installer for UBM EMEA specific event sites
+distribution_name = Test_Events
+description = Test profile
 core = 7.x
 exclusive = 1
-version = 7.x-1.12
+version = 7.x-1
 
 ; Enable contrib modules
-
 dependencies[] = admin_menu
 
 dependencies[] = ctools
@@ -24,6 +23,6 @@ dependencies[] = options
 dependencies[] = strongarm
 dependencies[] = text
 
+; Enable features
 dependencies[] = ubm_emea_event
-dependencies[] = ubm_feeds_plugins
 dependencies[] = ubm_emea_event_import
