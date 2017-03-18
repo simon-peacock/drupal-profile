@@ -3,6 +3,11 @@ core = 7.x
 ; Drush make uses API version 2.
 api = 2
 
+; Admin ========================================================================
+projects[admin_menu][type] = "module"
+projects[admin_menu][subdir] = "contrib"
+projects[admin_menu][version] = 3.0-rc5
+
 ; Ctool/Context ================================================================
 projects[ctools][type] = "module"
 projects[ctools][subdir] = "contrib"
