@@ -1,10 +1,3 @@
-; Make profiles inherit from each other
-; Allows to use a base profile including it's modules
-; @see https://drupal.org/node/2067229
-projects[drupal][patch][] = "http://drupal.org/files/2067229-2-inheritable-profiles.patch"
-projects[drupal][patch][] = "https://ubmemeaensoproject.s3.amazonaws.com/ENSO_patches_libraries/drupal-update-css-paths.patch"
-
-
 ; Ctool/Context ================================================================
 projects[ctools][type] = "module"
 projects[ctools][subdir] = "contrib"
