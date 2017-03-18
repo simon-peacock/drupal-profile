@@ -1,0 +1,7 @@
+name = UBM Feeds Plugins
+description = Feeds and feeds tamper plugins for UBM Websites.
+core = 7.x
+dependencies[] = feeds
+dependencies[] = feeds_tamper
+package = UBM
+version = 7.x-1.0
