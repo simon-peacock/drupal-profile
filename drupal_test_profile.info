@@ -11,6 +11,7 @@ dependencies[] = dblog
 
 ; Enable contrib modules
 
+dependencies[] = admin_menu
 dependencies[] = ctools
 dependencies[] = feeds
 dependencies[] = feeds_tamper
