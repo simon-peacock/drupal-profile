@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Install and updated processes.
+ */
+
+/**
+ * Updates from 7.x-1.0 version.
+ *
+ * Deleting obsolete fields and block node type.
+ */
+function event_content_type_fields_update_7100(&$sandbox) {
+  if (field_info_field('field_video')) {
+    field_delete_field('field_video');
+  }
+
+  if (node_type_load('block')) {
+    node_type_delete('block');
+    node_types_rebuild();
+  }
+}
