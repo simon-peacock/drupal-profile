@@ -106,13 +106,19 @@ projects[libraries][type] = "module"
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = 2.3
 
-projects[entity_translation][type] = "module"
-projects[entity_translation][subdir] = "contrib"
-projects[entity_translation][version] = 1.0-beta6
-
 ; Entity related ===============================================================
 projects[entity][type] = "module"
 projects[entity][subdir] = "contrib"
 projects[entity][version] = 1.8
 projects[entity][patch][] = "https://www.drupal.org/files/issues/op_update_should_be_create-2807275-2.patch"
+
+; Entity Translation ========================================================================
+projects[entity_translation][type] = "module"
+projects[entity_translation][subdir] = "contrib"
+projects[entity_translation][version] = 1.0-beta6
+
+; Variable ===============================================================
+projects[variable][type] = "module"
+projects[variable][subdir] = "contrib"
+projects[variable][version] = 2.5
 
