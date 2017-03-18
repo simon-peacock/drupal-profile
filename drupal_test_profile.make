@@ -55,5 +55,9 @@ projects[libraries][type] = "module"
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = 2.3
 
+projects[job_scheduler][type] = "module"
+projects[job_scheduler][subdir] = "contrib"
+projects[job_scheduler][version] = 2.0-alpha3
+
 
 
