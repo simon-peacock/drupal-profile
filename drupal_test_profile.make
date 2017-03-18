@@ -69,10 +69,6 @@ projects[geofield][subdir] = "contrib-patched"
 projects[geofield][version] = 2.3
 projects[geofield][patch][] = "https://www.drupal.org/files/issues/geofield-feeds-simple-import-2534822-4.patch"
 
-; tzfield =====================================================================
-projects[tzfield][type] = "module"
-projects[tzfield][subdir] = "contrib"
-projects[tzfield][version] = 1.1
 
 ; file_entity =====================================================================
 projects[file_entity][type] = "module"
