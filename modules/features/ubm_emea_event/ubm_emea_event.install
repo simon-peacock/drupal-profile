@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * UBM EMEA event content type module install file.
+ */
+
+/**
+ * Updates from 7.x-1.0 version.
+ *
+ * Update ubm_emea_umbrella_child_sites variable format.
+ */
+function ubm_emea_event_update_7100(&$sandbox) {
+  $child_sites = variable_get('ubm_emea_umbrella_child_sites', '');
+  if (is_array($child_sites)) {
+    variable_set('ubm_emea_umbrella_child_sites', $child_sites[0]);
+  }
+}
+
+/**
+ * Updates from 7.x-1.1 version.
+ *
+ * Sets language none content to english on event content type.
+ */
+function ubm_emea_event_update_7101(&$sandbox) {
+  $events_ids_query = new EntityFieldQuery();
+  $events_ids = $events_ids_query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'event')
+    ->propertyCondition('language', LANGUAGE_NONE)
+    ->execute();
+  if (!empty($events_ids['node'])) {
+    $events = entity_load('node', array_keys($events_ids['node']));
+    foreach ($events as $event) {
+      $event->language = 'en';
+
+      $event->title_field['en'] = $event->title_field[LANGUAGE_NONE];
+      $event->title_field[LANGUAGE_NONE] = array();
+
+      entity_save('node', $event);
+    }
+  }
+}
