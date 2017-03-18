@@ -551,51 +551,6 @@ function ubm_emea_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_time_zone'.
-  $field_instances['node-event-field_time_zone'] = array(
-    'bundle' => 'event',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Europe/London',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'tzfield',
-        'settings' => array(),
-        'type' => 'tzfield_default',
-        'weight' => 13,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'exclude_cv' => 0,
-    'field_name' => 'field_time_zone',
-    'label' => 'Time zone',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 16,
-    ),
-  );
-
   // Exported field_instance: 'node-event-title_field'.
   $field_instances['node-event-title_field'] = array(
     'bundle' => 'event',
@@ -644,21 +599,7 @@ function ubm_emea_event_field_default_field_instances() {
     ),
   );
 
-  // Translatables
-  // Included for use with string extractors like potx.
-  t('Address');
-  t('City');
-  t('Country');
-  t('Dates');
-  t('Event Code');
-  t('Event External Location Link');
-  t('Event Link Type');
-  t('Event location');
-  t('Logo');
-  t('Map location');
-  t('Time zone');
-  t('Title');
-  t('Venue name');
+
 
   return $field_instances;
 }
