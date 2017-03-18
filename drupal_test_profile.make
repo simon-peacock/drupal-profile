@@ -68,3 +68,51 @@ projects[geofield][patch][] = "https://www.drupal.org/files/issues/geofield-feed
 projects[tzfield][type] = "module"
 projects[tzfield][subdir] = "contrib"
 projects[tzfield][version] = 1.1
+
+; file_entity =====================================================================
+projects[file_entity][type] = "module"
+projects[file_entity][subdir] = "contrib"
+projects[file_entity][version] = 2.0-beta3
+
+; i18n =====================================================================
+; @See https://www.drupal.org/node/2082573
+projects[i18n][type] = "module"
+projects[i18n][subdir] = "contrib-patched"
+projects[i18n][version] = "1.15"
+projects[i18n][patch][] = "https://www.drupal.org/files/issues/i18n_string-undefined-method-2082573-13.patch"
+
+; title =====================================================================
+projects[title][type] = "module"
+projects[title][subdir] = "contrib"
+projects[title][version] = 1.0-alpha9
+
+; geophp =====================================================================
+projects[geophp][type] = "module"
+projects[geophp][subdir] = "contrib"
+projects[geophp][version] = 1.7
+
+; Views ========================================================================
+projects[views][type] = "module"
+projects[views][subdir] = "contrib"
+projects[views][version] = 3.15
+
+; Job Scheduler ========================================================================
+projects[job_scheduler][type] = "module"
+projects[job_scheduler][subdir] = "contrib"
+projects[job_scheduler][version] = 2.0-alpha3
+
+; Libraries ========================================================================
+projects[libraries][type] = "module"
+projects[libraries][subdir] = "contrib"
+projects[libraries][version] = 2.3
+
+projects[entity_translation][type] = "module"
+projects[entity_translation][subdir] = "contrib"
+projects[entity_translation][version] = 1.0-beta6
+
+; Entity related ===============================================================
+projects[entity][type] = "module"
+projects[entity][subdir] = "contrib"
+projects[entity][version] = 1.8
+projects[entity][patch][] = "https://www.drupal.org/files/issues/op_update_should_be_create-2807275-2.patch"
+
