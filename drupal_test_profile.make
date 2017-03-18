@@ -25,6 +25,11 @@ projects[feeds_tamper][type] = "module"
 projects[feeds_tamper][subdir] = "contrib"
 projects[feeds_tamper][version] = 1.1
 
+; Feeds Et =================
+projects[feeds_et][type] = "module"
+projects[feeds_et][subdir] = "contrib"
+projects[feeds_et][version] = 1.x-dev
+
 ; Date/Time ====================================================================
 projects[date][type] = "module"
 projects[date][subdir] = "contrib"
