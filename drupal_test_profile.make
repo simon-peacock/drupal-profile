@@ -35,39 +35,17 @@ projects[strongarm][type] = "module"
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = 2.0
 
-; Media ========================================================================
-projects[media][type] = "module"
-projects[media][subdir] = "contrib"
-projects[media][version] = 2.0-rc5
 
 ; Features =====================================================================
 projects[features][type] = "module"
 projects[features][subdir] = "contrib"
 projects[features][version] = 2.10
 
-; Conditional Fields =====================================================================
-projects[conditional_fields][type] = "module"
-projects[conditional_fields][subdir] = "contrib"
-projects[conditional_fields][version] = 3.0-alpha2
-
-; Countries =====================================================================
-; @See https://www.drupal.org/node/2070267
-projects[countries][type] = "module"
-projects[countries][subdir] = "contrib-patched"
-projects[countries][version] = 2.3
-projects[countries][patch][] = "https://www.drupal.org/files/issues/views_flag_field-2070267-9.patch"
 
 ; Date Ical =====================================================================
 projects[date_ical][type] = "module"
 projects[date_ical][subdir] = "contrib"
 projects[date_ical][version] = 3.9
-
-; Geofield =====================================================================
-; @See https://www.drupal.org/node/2534822
-projects[geofield][type] =  "module"
-projects[geofield][subdir] = "contrib-patched"
-projects[geofield][version] = 2.3
-projects[geofield][patch][] = "https://www.drupal.org/files/issues/geofield-feeds-simple-import-2534822-4.patch"
 
 
 ; file_entity =====================================================================
@@ -87,10 +65,6 @@ projects[title][type] = "module"
 projects[title][subdir] = "contrib"
 projects[title][version] = 1.0-alpha9
 
-; geophp =====================================================================
-projects[geophp][type] = "module"
-projects[geophp][subdir] = "contrib"
-projects[geophp][version] = 1.7
 
 ; Views ========================================================================
 projects[views][type] = "module"
