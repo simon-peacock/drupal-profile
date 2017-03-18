@@ -15,18 +15,11 @@ dependencies[] = feeds
 dependencies[] = feeds_ui
 dependencies[] = feeds_tamper
 
-dependencies[] = conditional_fields
-dependencies[] = countries
-
 dependencies[] = date
 dependencies[] = date_ical
 
 dependencies[] = features
-dependencies[] = geofield
-dependencies[] = geofield_map
-dependencies[] = image
 dependencies[] = list
-dependencies[] = media
 dependencies[] = options
 dependencies[] = strongarm
 dependencies[] = text
