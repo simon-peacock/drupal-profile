@@ -5,23 +5,22 @@ core = 7.x
 exclusive = 1
 version = 7.x-1.12
 
-; Enable core modules
-
-dependencies[] = dblog
-
 ; Enable contrib modules
 
 dependencies[] = admin_menu
+
 dependencies[] = ctools
+dependencies[] = views
 dependencies[] = feeds
 dependencies[] = feeds_ui
 dependencies[] = feeds_tamper
+
 dependencies[] = conditional_fields
 dependencies[] = countries
-dependencies[] = ctools
+
 dependencies[] = date
 dependencies[] = date_ical
-dependencies[] = event_content_type_fields
+
 dependencies[] = features
 dependencies[] = geofield
 dependencies[] = geofield_map
@@ -31,8 +30,8 @@ dependencies[] = media
 dependencies[] = options
 dependencies[] = strongarm
 dependencies[] = text
-dependencies[] = tzfield
 
+dependencies[] = event_content_type_fields
 dependencies[] = ubm_emea_event
 dependencies[] = ubm_feeds_plugins
 dependencies[] = ubm_emea_event_import
