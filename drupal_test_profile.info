@@ -25,4 +25,4 @@ dependencies[] = text
 
 ; Enable features
 dependencies[] = test_event_ct
-dependencies[] = ubm_emea_event_import
+dependencies[] = test_event_import
