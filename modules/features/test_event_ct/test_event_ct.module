@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the test event ct Event feature.
+ */
+
+include_once 'test_event_ct.features.inc';
