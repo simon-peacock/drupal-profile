@@ -17,8 +17,8 @@ projects[ctools][version] = 1.12
 projects[feeds][type] = "module"
 projects[feeds][subdir] = "contrib"
 projects[feeds][version] = 2.0-beta3
-projects[feeds][patch][] = "https://ubmemeaensoprod.s3.amazonaws.com/ENSO_patches_libraries/feeds_download_path.patch"
-projects[feeds][patch][] = "https://ubmemeaensoprod.s3.amazonaws.com/ENSO_patches_libraries/feeds_only_insert_valid_date.patch"
+;projects[feeds][patch][] = "https://ubmemeaensoprod.s3.amazonaws.com/ENSO_patches_libraries/feeds_download_path.patch"
+;projects[feeds][patch][] = "https://ubmemeaensoprod.s3.amazonaws.com/ENSO_patches_libraries/feeds_only_insert_valid_date.patch"
 
 ; Feeds Tamper =================
 projects[feeds_tamper][type] = "module"
